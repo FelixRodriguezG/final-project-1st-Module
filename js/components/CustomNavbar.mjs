@@ -86,13 +86,12 @@ class CustomNavbar extends HTMLElement {
           color: white;
           font-weight: var(--font-weight---bold);
           padding: 0.75rem 1.5rem;
-          border-radius: 4px;
           text-decoration: none;
           transition: background-color 0.3s ease;
         }
 
         .cta .btn:hover {
-          background: var(--color-secondary---accent, #0022cc);
+          background: var(--color-primary---accent, #0022cc);
           color: var(--color-primary---default, #072ac8);;
         }
 
@@ -112,6 +111,7 @@ class CustomNavbar extends HTMLElement {
           }
 
           .menu-toggle {
+            
             display: block;
             font-size: 2rem;
             background: none;
@@ -121,6 +121,11 @@ class CustomNavbar extends HTMLElement {
           }
 
           .mobile-menu {
+            z-index: 100;
+            position: fixed; /* Cambiado a fixed */
+            top: 70px; /* Ajusta según la altura de tu navbar */
+            left: 0;
+            right: 0;
             display: none;
             flex-direction: column;
             gap: 1rem;

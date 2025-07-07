@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* Importación de estilos base */
 @import "./css/base.css";
 
@@ -46,8 +48,6 @@ html {
   --font-weight---medium: 500;
   --font-weight---bold: 700;
 
-
-
   /* Espaciados */
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
@@ -64,8 +64,20 @@ body {
   font-family: var(--font-primary);
   font-size: var(--font-size-base);
   line-height: 1.5;
-  background-color: var(--color-bg) ;
-
+  background-color: var(--color-bg);
+}
+a {
+  text-decoration: none;
+}
+h1 {
+  font-size: clamp(var(--font-size---h2), 4vw, var(--font-size---h1));
+  font-weight: var(--font-weight---bold);
+  color: var(--color-neutral---dark);
+  line-height: 1.2;
+}
+p {
+  font-size: var(--font-size-text---md);
+  color: var(--color-neutral---medium);
 }
 
 /* Utilidades globales */
@@ -75,3 +87,75 @@ body {
   padding: 0 var(--spacing-md);
 }
 
+.hero {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  height: 70dvh;
+  gap: 4rem;
+
+  .hero__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+
+    .hero__description {
+      text-wrap: prety;
+      width: 80%;
+    }
+
+    .button-group {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+
+      font-weight: var(--font-weight---bold);
+
+      .button {
+        background-color: var(--color-primary---default);
+        color: var(--color-neutral---light);
+        padding: 0.75rem 1.5rem;
+      }
+      .button--inactive {
+        color: var(--color-neutral---medium);
+      }
+    }
+  }
+  .hero__media {
+    position: relative;
+    display: flex;
+    max-width: 100%;
+    width: min(45vw, 600px);
+    align-items: center;
+    aspect-ratio: 1 / 1;
+
+    .hero__image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* Cambiado de 'contain' a 'cover' para llenar el espacio */
+    }
+
+    .image__deco{
+        position: absolute;
+        width: clamp(40%,26vw,60%);
+        object-fit: contain;
+        aspect-ratio: 1 / 1;
+
+
+        &.right{
+            top:0px;
+            left:-80px;
+        }
+
+        &.left{
+            bottom:-70px;
+            right: -80px;
+        }
+    }
+
+  }
+}

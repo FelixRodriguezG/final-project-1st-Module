@@ -1,26 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 </head>
+
 <body>
     <header class="container">
-        
-        <custom-navbar 
-  data-logo="./assets/logos/circle.svg"
-  data-links='[
-    {"href": "/", "text": "Home"},
-    {"href": "#projects", "text": "Projects"},
-    {"href": "#services", "text": "Services"}
-  ]'
-  data-btn='{"href": "/contact", "text": "Contact"}'>
-</custom-navbar>
+        <custom-navbar data-logo="./assets/logos/circle.svg" data-links='[
+            {"href": "/", "text": "Home"},
+            {"href": "#projects", "text": "Projects"},
+            {"href": "#services", "text": "Services"}]' data-btn='{"href": "/contact", "text": "Contact Us"}'>
+        </custom-navbar>
 
+        <section class="hero">
+            <article class="hero__content">
+                <h1>Empower Your Business With Stunning Design!</h1>
+                <p class="hero__description">Circle is a digital design and development studio. We design and develop
+                    astonishing websites and mobile apps.</p>
+                <div class="button-group">
+                    <a href="./pages/contact.html" class="button">Get in touch</a>
+                    <a href="#projects" class="button--inactive">See our work</a>
+
+                </div>
+
+
+            </article>
+            <figure class="hero__media">
+                <img class="hero__image" src="./assets/hero-section/hero-image.png" alt="Foto principal">
+                <img class="image__deco right" src="./assets/hero-section/card-1.png" alt="Decoración derecha">
+                <img class="image__deco left" src="./assets/hero-section/card-2.png" alt="Decoración izquierda">
+            </figure>
+
+        </section>
     </header>
-    
+    <main>
+
+    </main>
+
 </body>
 <script type="module" src="./js/index.js"></script>
+
 </html>
