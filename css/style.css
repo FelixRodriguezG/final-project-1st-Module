@@ -1,0 +1,77 @@
+/* Importación de estilos base */
+@import "./css/base.css";
+
+/* Reset - Estilos globales */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  /* Colores principales */
+  --color-primary---default: #072ac8;
+  --color-primary---hover: #a2d6f9;
+  --color-primary---tapped: #d1edff;
+  --color-primary---accent: #43d2ff;
+  --color-secondary---default: #ffc600;
+  --color-secondary---accent: #fce300;
+  --color-neutral---dark: #292e47;
+  --color-neutral---medium: #6b708d;
+  --color-neutral---light: #f4f6fc;
+  --color-neutral---light--blue: #ecf7ff;
+  --color-bg: #f2f4fc;
+
+  /* Tipografía */
+  --font-primary: "Roboto", sans-serif;
+  /* font size */
+  --font-size-base: 1rem;
+  --font-size---h1: 60px;
+  --font-size---h2: 40px;
+  --font-size---h3: 24px;
+  --font-size-text---xl: 24px;
+  --font-size-text---md: 20px;
+  --font-size-text---sm: 17px;
+  --font-size-caption--1: 15px;
+  --font-size-caption--2: 13px;
+  /* font weight */
+  --font-weight---regular: 400;
+  --font-weight---medium: 500;
+  --font-weight---bold: 700;
+
+
+
+  /* Espaciados */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+
+  /* Breakpoints */
+  --mobile: 375px;
+  --tablet: 768px;
+  --desktop: 1200px;
+}
+
+/* Estilos globales compartidos */
+body {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  background-color: var(--color-bg) ;
+
+}
+
+/* Utilidades globales */
+.container {
+  max-width: var(--desktop);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
