@@ -1,0 +1,45 @@
+.body-projects{
+    padding-top: 2rem;
+        
+}
+.project-details{
+    margin-top: 3rem !important;
+}
+
+
+.project-main {
+    
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+     .project-meta {
+       display: flex;
+       width: 100%;
+       justify-content: space-between;
+     }
+  }
+  .project-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    height: 400px;
+    object-fit: cover;
+    box-shadow: 0 24px 34px 0 rgba(226, 43, 220, 0.4);
+  }
+
+
+.subscribe-box{
+    margin-top: 10rem;
+
+}
+
+
+
+
+
+
+
+
+
+
+

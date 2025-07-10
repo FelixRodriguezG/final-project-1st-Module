@@ -9,39 +9,140 @@
 </head>
 
 <body>
-    <header class="container">
-        <custom-navbar data-logo="./assets/logos/circle.svg" data-links='[
-            {"href": "/", "text": "Home"},
-            {"href": "#projects", "text": "Projects"},
-            {"href": "#services", "text": "Services"}]' data-btn='{"href": "/contact", "text": "Contact Us"}'>
+    <header class="container min-height">
+        <custom-navbar role="navigation" aria-label="Main navigation" data-logo="./assets/logos/circle.svg" data-links='[
+        {"href": "/", "text": "Home"},
+        {"href": "#projects", "text": "Projects"},
+        {"href": "#services", "text": "Services"}]' data-btn='{"href": "/contact", "text": "Contact Us"}'>
         </custom-navbar>
 
-        <section class="hero">
+        <section class="hero" aria-labelledby="hero-heading">
             <article class="hero__content">
-                <h1>Empower Your Business With Stunning Design!</h1>
-                <p class="hero__description">Circle is a digital design and development studio. We design and develop
-                    astonishing websites and mobile apps.</p>
+                <h1 id="hero-heading">Empower Your Business With Stunning Design!</h1>
+                <p class="hero__description">
+                    Circle is a digital design and development studio.<br> We design and develop astonishing websites
+                    and mobile apps.
+                </p>
                 <div class="button-group">
                     <a href="./pages/contact.html" class="button">Get in touch</a>
-                    <a href="#projects" class="button--inactive">See our work</a>
-
+                    <a href="#projects" class=" button--inactive">See our work</a>
                 </div>
-
-
             </article>
-            <figure class="hero__media">
-                <img class="hero__image" src="./assets/hero-section/hero-image.png" alt="Foto principal">
-                <img class="image__deco right" src="./assets/hero-section/card-1.png" alt="Decoración derecha">
-                <img class="image__deco left" src="./assets/hero-section/card-2.png" alt="Decoración izquierda">
+            <figure class="hero__media" aria-hidden="true">
+                <img class="hero__image" src="./assets/hero-section/hero-image.png"
+                    alt="Team working on a digital product" />
+                <img class="image__deco right hidden" src="./assets/hero-section/card-1.png" alt=""
+                    aria-hidden="true" />
+                <img class="image__deco left hidden" src="./assets/hero-section/card-2.png" alt="" aria-hidden="true" />
             </figure>
 
         </section>
+        <section class="clients-group" aria-labelledby="clients-heading">
+            <h2 id="clients-heading" class="sr-only">Clients</h2>
+            <ul>
+                <li><a href="#"><img src="./assets/logos/airbnb-logo.svg" alt="Airbnb logo" /></a></li>
+                <li><a href="#"><img src="./assets/logos/amazon-logo.svg" alt="Amazon logo" /></a></li>
+                <li><a href="#"><img src="./assets/logos/fedex-logo.svg" alt="FedEx logo" /></a></li>
+                <li><a href="#"><img src="./assets/logos/google-logo.svg" alt="Google logo" /></a></li>
+                <li><a href="#"><img src="./assets/logos/microsoft-logo.svg" alt="Microsoft logo" /></a></li>
+            </ul>
+        </section>
     </header>
-    <main>
+    <main class="main">
+        <section id="projects" class="projects__container container" aria-labelledby="projects-heading">
+            <h2 id="projects-heading" class="title">Recent Projects</h2>
+            <div class="card__wrapper">
+                <!-- Cards will be injected dynamically -->
+            </div>
+        </section>
+
+        <section class="testimonial" aria-labelledby="testimonial-heading">
+            <article class="testimonial__container">
+                <div class="testimonial__content">
+                    <h3 id="testimonial-heading" class="testimonial__title">Hear What Our Clients Have to Say</h3>
+                    <blockquote class="testimonial__bquote" cite="https://booking.com">
+                        “Circle helped us through every stage of our startup.<br>
+                        We really enjoyed working with you.”
+                    </blockquote>
+                    <div class="profile">
+                        <img src="./assets/testimonial-section/profile.png"
+                            alt="Profile picture of Kristin Watson wearing sunglasses" />
+                        <div class="profile__content">
+                            <span class="profile__name">Kristin Watson</span>
+                            <span>Booking.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <img class="emogi emogi-1 hidden" src="./assets/testimonial-section/memoji-1.png" alt=""
+                    aria-hidden="true">
+                <img class="emogi emogi-2 hidden" src="./assets/testimonial-section/memoji-2.png" alt=""
+                    aria-hidden="true">
+                <img class="emogi emogi-3 hidden" src="./assets/testimonial-section/memoji-3.png" alt=""
+                    aria-hidden="true">
+                <img class="emogi emogi-4 hidden" src="./assets/testimonial-section/memoji-4.png" alt=""
+                    aria-hidden="true">
+            </article>
+        </section>
+
+        <section id="services" class="services__container container" aria-labelledby="services-heading">
+            <h2 id="services-heading" class="title">Our Services</h2>
+            <section class="service__card__container">
+                <article class="card__service">
+                    <div class="img_container">
+                        <img src="./assets/services-section/icons/1.svg" alt="User Interface Design icon" />
+                    </div>
+                    <h3 class="card__service__title">User Interface Design</h3>
+                    <p class="service__description">Circle provides you with a stunning user interface design that is
+                        accessible to everyone.</p>
+                    <a href="/">Learn more</a>
+                </article>
+
+                <article class="card__service">
+                    <div class="img_container"><img src="./assets/services-section/icons/2.svg"
+                            alt="User Experience Design icon" /></div>
+                    <h3 class="card__service__title">User Experience Design</h3>
+                    <p class="service__description">Circle always focuses on delivering the best user experience to your
+                        customers</p>
+                    <a href="/">Learn more</a>
+                </article>
+
+                <article class="card__service">
+                    <div class="img_container"><img src="./assets/services-section/icons/3.svg"
+                            alt="App Development icon" /></div>
+                    <h3 class="card__service__title">Application Development</h3>
+                    <p class="service__description">We develop high-quality mobile and web applications using the latest
+                        technology stack.</p>
+                    <a href="/">Learn more</a>
+                </article>
+            </section>
+        </section>
+
+
+        <subscribe-box 
+        class="max-width"
+        data-bg="var(--color-secondary)" 
+        data-btn-text="Subscribe"
+        data-action="https://formsubmit.co/ajax/tucorreo@gmail.com" 
+        data-icon="./assets/newsletter/icon/mail.svg">
+            <h2 slot="title">Do you have any questions?</h2>
+            <p slot="subtitle">Let us help you!</p>
+        </subscribe-box>
 
     </main>
+    <custom-footer 
+    data-logo="./assets/logos/circle.svg" 
+    data-links='[
+    { "href": "/team", "text": "Team" },
+    { "href": "/services", "text": "Services" },
+    { "href": "/about", "text": "About Us" },
+    { "href": "/press", "text": "Press" },
+    { "href": "/projects", "text": "Projects" },
+    { "href": "/privacy", "text": "Privacy Policy" }
+  ]'>
+    </custom-footer>
 
+    <script type="module" src="./js/index.js"></script>
 </body>
-<script type="module" src="./js/index.js"></script>
 
 </html>

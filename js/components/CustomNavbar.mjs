@@ -91,8 +91,14 @@ class CustomNavbar extends HTMLElement {
         }
 
         .cta .btn:hover {
-          background: var(--color-primary---accent, #0022cc);
-          color: var(--color-primary---default, #072ac8);;
+          background: transparent;
+          border: 2px solid var(--color-primary---default, #072ac8);
+          color: var(--color-primary---default, #072ac8);
+        }
+        .cta .btn:active {
+          background: var(--color-primary-accent, #43d2ff);
+          border: 2px solid var(--color-primary---default, #072ac8);
+          color: var(--color-primary---default, #072ac8);
         }
 
         /* Ocultar elementos móviles en desktop */

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Project Details - Circle Agency</title>
+</head>
+
+<body class="body-projects">
+    <header class="container header">
+        <custom-navbar 
+        role="navigation" 
+        aria-label="Main navigation" 
+        data-logo="../assets/logos/circle.svg" 
+        data-links='[
+            {"href": "/", "text": "Home"},
+            {"href": "#projects", "text": "Projects"},
+            {"href": "/#services", "text": "Services"}]' 
+        data-btn='{"href": "/contact", "text": "Contact Us"}'>
+        </custom-navbar>
+
+        <section class="container project-details"></section>
+    </header>
+
+    <main id="projects">
+        <section class="other-projects  container">
+            <h2 class="title">Other Projects</h2>
+            <div class="other-projects__wrapper">
+
+            </div>
+        </section>
+
+        <section class="subscribe-box">
+            <subscribe-box 
+            data-bg="#ffc600" 
+            data-btn-text="Subscribe"
+            data-action="https://formsubmit.co/ajax/tucorreo@gmail.com" 
+            data-icon="../assets/newsletter/icon/mail.svg">
+                <h2 slot="title">Do you have any questions?</h2>
+                <p slot="subtitle">Let us help you!</p>
+            </subscribe-box>
+        </section>
+    </main>
+
+    <custom-footer 
+    data-logo="../assets/logos/circle.svg" 
+    data-links='[
+    { "href": "/team", "text": "Team" },
+    { "href": "/services", "text": "Services" },
+    { "href": "/about", "text": "About Us" },
+    { "href": "/press", "text": "Press" },
+    { "href": "/projects", "text": "Projects" },
+    { "href": "/privacy", "text": "Privacy Policy" }
+  ]'>
+    </custom-footer>
+
+    <script type="module" src="../js/projects.js"></script>
+</body>
+
+</html>
