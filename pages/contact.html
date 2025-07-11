@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Contact</title>
+</head>
+
+<body>
+    <header class="container">
+        <custom-navbar role="navigation" aria-label="Main navigation" data-logo="../assets/logos/circle.svg" data-links='[
+            {"href": "/", "text": "Home"},
+            {"href": "/#projects", "text": "Projects"},
+            {"href": "/#services", "text": "Services"}]'
+            data-btn='{"href": "/pages/contact.html", "text": "Contact Us"}'>
+        </custom-navbar>
+    </header>
+    <main class="container">
+
+        <h1 class="title">Contanct Us</h1>
+        <form class="contact-form" novalidate>
+            <label class="form-group">
+                Full Name *
+                <input type="text" name="fullname" required placeholder="Enter your full name" />
+                <span class="error">Full name is required</span>
+            </label>
+
+            <div class="form-row">
+                <label class="form-group">
+                    Email *
+                    <input type="email" name="email" required placeholder="Enter your email address" />
+                    <span class="error">Enter a valid email</span>
+                </label>
+
+                <label class="form-group">
+                    Phone *
+                    <input type="tel" name="phone" placeholder="Enter your phone number" required/>
+                    <span class="error">Enter a valid phone number</span>
+                </label>
+            </div>
+
+            <label class="form-group">
+                Message *
+                <textarea name="message" required placeholder="Write your message here ...."></textarea>
+                <span class="error"></span>
+            </label>
+
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+
+    <script type="module" src="../js/contact.js"></script>
+</body>
+
+</html>

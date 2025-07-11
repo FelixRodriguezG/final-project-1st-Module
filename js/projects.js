@@ -41,7 +41,7 @@ function renderProjectDetail(project) {
       class="project-image"
       style="view-transition-name: project-image-${project.uuid};"
       />
-      <p>${project.content}</p>
+      <p class="project-content">${project.content}</p>
     
     </section>
   `;

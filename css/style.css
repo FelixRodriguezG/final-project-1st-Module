@@ -1,13 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import url('base.css');
+
 @view-transition {
   navigation: auto;
-}
-
-/* Importación de fuente */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-
-html {
-    scroll-behavior: smooth;
 }
 
 :root {
@@ -21,7 +16,9 @@ html {
   --color-neutral-medium: #6b708d;
   --color-neutral-light: #f4f6fc;
   --color-light-blue: #ecf7ff;
-  --color-bg: #f2f4fc;
+  --color-bg: #f2fcf2;
+  --color-success: rgb(70, 206, 70);
+  --color-error: rgb(237, 54, 54);
 
   --font-primary: "Roboto", sans-serif;
   --font-size-base: 1rem;
@@ -47,57 +44,8 @@ html {
   --desktop-xl: 1350px;
 }
 
-html {
-  box-sizing: border-box;
-  font-size: 16px;
-}
 
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
 
-body {
-  font-family: var(--font-primary);
-  font-size: var(--font-size-base);
-  line-height: 1.5;
-  background-color: var(--color-bg);
-}
-
-h1,
-h2,
-h3 {
-  text-wrap: balance;
-  color: var(--color-neutral-dark);
-  font-weight: var(--font-bold);
-}
-
-h1 {
-  font-size: clamp(var(--font-size-h2), 8vw, var(--font-size-h1));
-  line-height: 1.2;
-}
-
-h2 {
-  font-size: clamp(var(--font-size-h3), 7vw, var(--font-size-h2));
-}
-
-p {
-  font-size: var(--font-size-md);
-  color: var(--color-neutral-medium);
-  text-wrap: pretty;
-}
-
-ul,
-ol {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
 
 /* helpers - utilities */
 
@@ -329,9 +277,10 @@ a {
 }
 ::view-transition-old(project-image-*),
 ::view-transition-new(project-image-*) {
-  animation-duration: 2s;
+  animation-duration: .6s;
   animation-timing-function: ease;
   animation-name: fadeInOut; 
+
 }
 
 @keyframes fadeInOut {
@@ -485,6 +434,10 @@ a {
     }
     & .card__service__title {
       font-size: clamp(var(--font-size-md), 5vw, var(--font-size-xl));
+    }
+    & .service__description{
+      font-size: var(--font-size-sm) ;
+
     }
 
     & a {

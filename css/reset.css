@@ -1,0 +1,48 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  background-color: var(--color-bg);
+}
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+  color: var(--color-neutral-dark);
+  font-weight: var(--font-bold);
+}
+h1 {
+  font-size: clamp(var(--font-size-h2), 8vw, var(--font-size-h1));
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: clamp(var(--font-size-h3), 7vw, var(--font-size-h2));
+}
+
+p {
+  font-size: var(--font-size-md);
+  color: var(--color-neutral-medium);
+  text-wrap: pretty;
+
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}

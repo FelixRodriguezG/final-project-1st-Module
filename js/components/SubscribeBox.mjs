@@ -181,13 +181,13 @@ class SubscribeBox extends HTMLElement {
     const input = this.shadowRoot.querySelector('input[type="email"]');
 
     // Obtener atributos data
-     const bg = this.getAttribute('data-bg') ?? '#ffe600';
+    const bg = this.getAttribute('data-bg') ?? '#ffe600';
     const btnText = this.getAttribute('data-btn-text') ?? 'Subscribe';
-    const action = this.getAttribute('data-action') ?? 'https://formsubmit.co/ajax/tucorreo@gmail.com';
+    const action = this.getAttribute('data-action') ?? 'https://';
     const icon = this.getAttribute('data-icon');
 
     // Y los aplicamos aquí
-    this.style.backgroundColor = bg; 
+    this.style.backgroundColor = bg;
     this.shadowRoot.querySelector('.subscribe-btn').textContent = btnText;
     form.setAttribute('action', action);
 
@@ -195,6 +195,11 @@ class SubscribeBox extends HTMLElement {
     if (icon) {
       iconSlot.innerHTML = `<img src="${icon}" alt="" class="newsletter__icon" aria-hidden="true" />`;
     }
+    form.insertAdjacentHTML('beforeend', `
+  <input type="hidden" name="_subject" value="📥 Nueva suscripción por email">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="false">
+`);
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -210,13 +215,15 @@ class SubscribeBox extends HTMLElement {
       }
 
       try {
+        const formData = new FormData();
+        formData.append("email", email);
         const response = await fetch(action, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
             Accept: 'application/json'
           },
-          body: JSON.stringify({ email })
+          body: formData
         })
 
         if (response.ok) {
@@ -224,7 +231,7 @@ class SubscribeBox extends HTMLElement {
           form.reset();
         } else {
           error.textContent = 'There was an error. Please try again'
-           this.clearErrorAfterDelay(error);
+          this.clearErrorAfterDelay(error);
         }
       } catch (error) {
         error.textContent = 'Could not connect. Try again later.'
@@ -233,9 +240,9 @@ class SubscribeBox extends HTMLElement {
         input.value = "";
       }
 
-      
+
     })
-    
+
     closeBtn.addEventListener('click', () => {
       modal.classList.remove('active');
     })
@@ -248,7 +255,7 @@ class SubscribeBox extends HTMLElement {
   validateEmail(email) {
     // Expresión regular corregida sin backslashes extras
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
+  }
 }
 
 customElements.define('subscribe-box', SubscribeBox);
