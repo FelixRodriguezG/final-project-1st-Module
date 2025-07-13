@@ -1,4 +1,8 @@
 import { createCard } from './index.js';
+import './components/CustomNavbar.mjs';
+import './components/CustomFooter.mjs';
+import './components/ScrollToTop.mjs';
+
 
 window.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
@@ -23,6 +27,8 @@ window.addEventListener("DOMContentLoaded", () => {
       console.error("Error loading project:", err);
       document.querySelector(".project-details").innerHTML = "<p>Error loading project.</p>";
     });
+
+    
 });
 
 function renderProjectDetail(project) {

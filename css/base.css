@@ -3,3 +3,41 @@
 @import url('contact.css');
 @import url('notfound.css');
 
+:root {
+  --color-primary: #072ac8;
+  --color-primary-hover: #a2d6f9;
+  --color-primary-tapped: #d1edff;
+  --color-primary-accent: #43d2ff;
+  --color-secondary: #ffc600;
+  --color-secondary-accent: #fce300;
+  --color-neutral-dark: #292e47;
+  --color-neutral-medium: #6b708d;
+  --color-neutral-light: #f4f6fc;
+  --color-light-blue: #ecf7ff;
+  --color-bg: #f4f6fc;
+  --color-success: rgb(83, 157, 83);
+  --color-error: rgb(238, 75, 85);
+
+  --font-primary: "Roboto", sans-serif;
+  --font-size-base: 1rem;
+  --font-size-h1: 60px;
+  --font-size-h2: 40px;
+  --font-size-h3: 24px;
+  --font-size-xl: 24px;
+  --font-size-md: 20px;
+  --font-size-sm: 17px;
+  --font-size-caption-1: 15px;
+  --font-size-caption-2: 13px;
+
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-bold: 700;
+
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+
+  --mobile: 375px;
+  --desktop: 1200px;
+  --desktop-xl: 1350px;
+}

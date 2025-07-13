@@ -26,8 +26,10 @@ const style = /*CSS*/
     ::slotted(p) {
       margin-bottom: 2rem;
       color: #222;
-      font-size: 1rem;
+      font-size: 10rem;
+      font-size: clamp(1rem, 4vw, 2rem) !important; 
     }
+
   
     form {
       display: flex;
@@ -37,6 +39,7 @@ const style = /*CSS*/
     }
     
     .input-icon {
+      position: relative;
       display: flex;
       align-items: center;
       width: clamp(200px, 40%, 480px);
@@ -83,11 +86,16 @@ const style = /*CSS*/
     }
   
     .error-message {
-      position:absolute;
-      color: red;
-      font-size: 1rem;
-      bottom: 15%;
-      left: 40%;
+      position: absolute;
+      font-size: var(--font-size-caption-2);
+      transform:skewX(-10deg); 
+      width: fit-content;
+      color: var(--color-error);
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0.3s, opacity 0.3s ease;
+      bottom: 50%;
+      left: 50%;
       transform: translate(-50%, -50%); 
     }
   
@@ -144,16 +152,16 @@ template.innerHTML = /*html*/
   <style>${style}</style>
   <div class="subscribe-container">
     <slot name="title"><h2>Subscribe</h2></slot>
-    <slot name="subtitle"><p>Get updates to your inbox</p></slot>
+    <slot name="subtitle"><p id="subtitle">Get updates to your inbox</p></slot>
     <form novalidate>
       <label class="input-icon">
         <span class="icon-slot"></span>
         <span class="sr-only">Email</span>
         <input type="email" name="email" placeholder="Enter your email" required />
+        <div class="error-message" aria-live="polite"></div>
       </label>
       <button type="submit" class="subscribe-btn">Subscribe</button>
     </form>
-    <div class="error-message" aria-live="polite"></div>
   </div>
 
   <div class="modal" role="dialog" aria-modal="true">
@@ -200,6 +208,20 @@ class SubscribeBox extends HTMLElement {
   <input type="hidden" name="_template" value="table">
   <input type="hidden" name="_captcha" value="false">
 `);
+
+    input.addEventListener('input', () => {
+
+
+      if (!this.validateEmail(input.value)) {
+        error.textContent = 'Please enter a valid email address.';
+        error.style.opacity = 1;
+        error.style.visibility = 'visible';
+      } else {
+        error.textContent = '';
+        error.style.opacity = 0;
+        error.style.visibility = 'hidden';
+      }
+    });
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();

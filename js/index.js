@@ -2,6 +2,7 @@
 import { CustomNavbar } from './components/CustomNavbar.mjs';
 import { SubscribeBox } from './components/SubscribeBox.mjs';
 import { CustomFooter } from './components/CustomFooter.mjs';
+import { ScrollToTop } from './components/ScrollToTop.mjs';
 
 
 // Load card data from the API
@@ -21,7 +22,8 @@ window.addEventListener('DOMContentLoaded', () => {
             console.error('Error fetching projects:', error);
         });
 
-    // Validate the current route
+        
+
 });  
 
 
@@ -41,7 +43,7 @@ export function createCard(project) {
     const imgContainer = document.createElement('div');
     imgContainer.className = 'img__container';
     const img = document.createElement('img');
-    img.src = project.image || './assets/projects-section/1.jpg'; 
+    img.src = `../assets/projects-section/${project.uuid}.webp` || project.image; 
     img.alt = project.name || 'Project image';
     img.setAttribute("style", `view-transition-name: project-image-${project.uuid};`);
 

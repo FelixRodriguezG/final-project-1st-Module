@@ -8,7 +8,7 @@
     <title>Contact</title>
 </head>
 
-<body>
+<body >
     <header class="container">
         <custom-navbar role="navigation" aria-label="Main navigation" data-logo="../assets/logos/circle.svg" data-links='[
             {"href": "/", "text": "Home"},
@@ -22,36 +22,51 @@
         <h1 class="title">Contanct Us</h1>
         <form class="contact-form" novalidate>
             <label class="form-group">
-                Full Name *
-                <input type="text" name="fullname" required placeholder="Enter your full name" />
-                <span class="error">Full name is required</span>
+                Full Name * 
+                <input type="text" name="name" autocomplete="name" aria-describedby="name-description" required
+                    placeholder="Enter your full name" />
+                <span id="name-description" class="error">Full name is required</span>
             </label>
 
             <div class="form-row">
                 <label class="form-group">
                     Email *
-                    <input type="email" name="email" required placeholder="Enter your email address" />
-                    <span class="error">Enter a valid email</span>
+                    <input type="email" name="email" autocomplete="email" aria-describedby="email-description" required
+                        placeholder="Enter your email address" />
+                    <span id="email-description" class="error">Enter a valid email</span>
                 </label>
 
                 <label class="form-group">
                     Phone *
-                    <input type="tel" name="phone" placeholder="Enter your phone number" required/>
-                    <span class="error">Enter a valid phone number</span>
+                    <input type="tel" name="phone" placeholder="Enter your phone number" autocomplete="tel"
+                        aria-describedby="phone-description" required />
+                    <span id="phone-description" class="error">Enter a valid phone number</span>
                 </label>
             </div>
 
             <label class="form-group">
                 Message *
-                <textarea name="message" required placeholder="Write your message here ...."></textarea>
-                <span class="error"></span>
+                <textarea name="message" autocomplete="off" aria-describedby="message-description" minlength="10"
+                    maxlength="500" required placeholder="Write your message here ...."></textarea>
+                <span id="message-description" class="error">Message is required</span>
             </label>
-
+            
             <button type="submit">Submit</button>
         </form>
     </main>
-
-    <script type="module" src="../js/contact.js"></script>
+    <custom-footer 
+    data-logo="../assets/logos/circle.svg" 
+    data-links='[
+    { "href": "/team", "text": "Team" },
+    { "href": "/services", "text": "Services" },
+    { "href": "/about", "text": "About Us" },
+    { "href": "/press", "text": "Press" },
+    { "href": "/projects", "text": "Projects" },
+    { "href": "/privacy", "text": "Privacy Policy" }
+  ]'>
+    </custom-footer>
+    <scroll-top></scroll-top>
+    <script type="module" src="../js/validateForm.js"></script>
 </body>
 
 </html>
